@@ -28,6 +28,9 @@ var app = express();
 
 app.use(ExpressStormpath.init(app,{
   website: true,
+  expand: {
+    groups: true
+  },
   web: {
     spaRoot: path.join(__dirname, '..','client','index.html')
   }
