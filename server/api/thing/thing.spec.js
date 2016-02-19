@@ -2,19 +2,37 @@
 
 var should = require('should');
 var app = require('../../app');
-var request = require('supertest');
+var request = require('supertest')(app);
+var login = require('../login.spec');
 
 describe('GET /api/things', function() {
 
+  var agent;
+
+  before(function(done) {
+    this.timeout(10000);
+
+    app.on('stormpath.ready', function() {
+      login.login(request, function (loginAgent) {
+        agent = loginAgent;
+        done();
+      });
+    });
+  });
+
+
   it('should respond with JSON array', function(done) {
-    request(app)
-      .get('/api/things')
+    var req = request.get('/api/things');
+
+    agent.attachCookies(req);
+
+    req
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
         res.body.should.be.instanceof(Array);
-        done();
+	done();
       });
   });
 });

@@ -12,8 +12,10 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('/me').respond({});
     $httpBackend.expectGET('/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    $httpBackend.expectGET('app/main/main.html').respond(200, {});
 
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
