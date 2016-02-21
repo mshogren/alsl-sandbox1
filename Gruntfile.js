@@ -380,7 +380,7 @@ module.exports = function (grunt) {
       },
       deploy: {
         options: {
-          remote: 'https://github.com/mshogren/alsl-sandbox1.git',
+          remote: 'git@github.com:mshogren/alsl-sandbox1.git',
           branch: 'deploy'
         }
       }
