@@ -378,16 +378,10 @@ module.exports = function (grunt) {
         connectCommits: false,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-      heroku: {
+      deploy: {
         options: {
-          remote: 'heroku',
-          branch: 'master'
-        }
-      },
-      openshift: {
-        options: {
-          remote: 'openshift',
-          branch: 'master'
+          remote: 'https://github.com/mshogren/alsl-sandbox1.git',
+          branch: 'deploy'
         }
       }
     },
