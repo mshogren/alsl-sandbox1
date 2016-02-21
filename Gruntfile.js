@@ -380,7 +380,7 @@ module.exports = function (grunt) {
       },
       deploy: {
         options: {
-          remote: 'git@github.com:mshogren/alsl-sandbox1.git',
+          remote: process.env.SNAP_CI ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
           branch: 'deploy'
         }
       }
