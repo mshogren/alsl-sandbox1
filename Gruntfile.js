@@ -346,7 +346,8 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
             'assets/fonts/**/*',
-            'index.html'
+            'index.html',
+            'app/**/*'
           ]
         }, {
           expand: true,
@@ -591,17 +592,17 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'injector',
     'wiredep',
-    'useminPrepare',
+    //'useminPrepare',
     'autoprefixer',
     'ngtemplates',
-    'concat',
+    //'concat',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
-    'cssmin',
-    'uglify',
+    //'cssmin',
+    //'uglify',
     'rev',
-    'usemin'
+    //'usemin'
   ]);
 
   grunt.registerTask('default', [
