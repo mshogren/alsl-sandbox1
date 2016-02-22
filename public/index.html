@@ -11,8 +11,25 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="app/vendor.css"/>
-    <link rel="stylesheet" href="app/app.css"/>
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/forgot/forgot.css">
+      <link rel="stylesheet" href="app/login/login.css">
+      <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="app/profile/profile.css">
+      <link rel="stylesheet" href="app/register/register.css">
+      <link rel="stylesheet" href="app/reset/reset.css">
+      <link rel="stylesheet" href="app/verify/verify.css">
+      <link rel="stylesheet" href="components/modal/modal.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
   </head>
   <body ng-app="dashboardApp">
     <!--[if lt IE 7]>
@@ -37,9 +54,43 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-    <script src="app/vendor.js"></script>
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-resource.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-cookies.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.min.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.min.js"></script>
+      <script src="bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.min.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
 
         
+        <!-- build:js({.tmp,client}) app/app.js -->
+        
         <script src="app/app.js"></script>
+          <!-- injector:js -->
+          <script src="app/forgot/forgot.controller.js"></script>
+          <script src="app/forgot/forgot.js"></script>
+          <script src="app/login/login.controller.js"></script>
+          <script src="app/login/login.js"></script>
+          <script src="app/main/main.controller.js"></script>
+          <script src="app/main/main.js"></script>
+          <script src="app/profile/profile.controller.js"></script>
+          <script src="app/profile/profile.js"></script>
+          <script src="app/register/register.controller.js"></script>
+          <script src="app/register/register.js"></script>
+          <script src="app/reset/reset.controller.js"></script>
+          <script src="app/reset/reset.js"></script>
+          <script src="app/verify/verify.controller.js"></script>
+          <script src="app/verify/verify.js"></script>
+          <script src="components/modal/modal.service.js"></script>
+          <script src="components/navbar/navbar.controller.js"></script>
+          <!-- endinjector -->
+        <!-- endbuild -->
 </body>
 </html>
