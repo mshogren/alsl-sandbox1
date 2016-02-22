@@ -594,7 +594,7 @@ module.exports = function (grunt) {
     //'useminPrepare',
     'autoprefixer',
     'ngtemplates',
-    //'concat',
+    'concat',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
