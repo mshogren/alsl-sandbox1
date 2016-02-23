@@ -385,6 +385,13 @@ module.exports = function (grunt) {
           remote: process.env.SNAP_CI ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
           branch: 'deploy'
         }
+      },
+      pages: {
+        options: {
+	  dir: 'dist/public',
+	  remote: 'https://github.com/mshogren/alsl-sandbox1.git',
+	  branch: 'gh-pages'
+	}
       }
     },
 
