@@ -10,10 +10,10 @@ describe('Controller: MainCtrl', function () {
       $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope, STORMPATH_CONFIG) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/me').respond({});
-    $httpBackend.expectGET('/api/things')
+    $httpBackend.expectGET(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/me').respond({});
+    $httpBackend.expectGET(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
     $httpBackend.expectGET('app/main/main.html').respond(200, {});
 

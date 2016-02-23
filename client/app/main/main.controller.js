@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dashboardApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, STORMPATH_CONFIG) {
     $scope.awesomeThings = [];
 
     $http.get(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things').success(function(awesomeThings) {
