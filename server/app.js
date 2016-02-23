@@ -27,7 +27,7 @@ if(config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 
-var whiteList = JSON.parse(process.env.CORS_ORIGIN_WHITELIST);
+var whiteList = JSON.parse(process.env.CORS_ORIGIN_WHITELIST || "[]");
 
 app.use(cors({
   origin: function(origin, callback){
