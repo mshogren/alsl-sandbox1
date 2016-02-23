@@ -55,7 +55,7 @@
       <div class="form-group" ng-show="socialLoginProviders.length">
         <div class="col-sm-offset-4 col-sm-4">
           <p>Or login with:</p>
-          <button ng-repeat="provider in socialLoginProviders" type="button" class="btn btn-social btn-{{provider.name}}" sp-social-login="{{provider.name}}" sp-scope="public_profile,email">
+	  <button ng-repeat="provider in socialLoginProviders" type="button" class="btn btn-social btn-{{provider.name}}" sp-social-login="{{provider.name}}" ng-attr-sp-scope="{{provider.name == 'facebook' && 'public_profile,email' || undefined}}">
             {{provider.service.name}}
           </button>
         </div>
