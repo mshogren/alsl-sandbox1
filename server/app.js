@@ -27,7 +27,9 @@ if(config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 
-app.use(cors());
+app.use(cors({
+  credentials: true
+}));
 
 app.use(ExpressStormpath.init(app,{
   website: true,
