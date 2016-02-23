@@ -32,7 +32,14 @@ app.use(ExpressStormpath.init(app,{
     groups: true
   },
   web: {
-    spaRoot: path.join(__dirname, '..','client','index.html')
+    spaRoot: path.join(__dirname, '..','client','index.html'),
+    register: {
+      fields: {
+        username: {
+          enabled: true
+        }
+      }
+    }
   }
 }));
 
