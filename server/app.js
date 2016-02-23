@@ -28,6 +28,7 @@ if(config.seedDB) { require('./config/seed'); }
 var app = express();
 
 app.use(cors({
+  origin: 'http://alsl-sandbox1.michael-shogren.com/',
   credentials: true
 }));
 
