@@ -348,7 +348,8 @@ module.exports = function (grunt) {
             'assets/fonts/**/*',
             'index.html',
             'app/**/*',
-            'components/**/*'
+            'components/**/*',
+            'CNAME'
           ]
         }, {
           expand: true,
