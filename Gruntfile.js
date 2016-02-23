@@ -389,7 +389,7 @@ module.exports = function (grunt) {
       pages: {
         options: {
 	  dir: 'dist/public',
-	  remote: 'https://github.com/mshogren/alsl-sandbox1.git',
+	  remote: process.env.SNAP_CI ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
 	  branch: 'gh-pages'
 	}
       }
