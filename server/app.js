@@ -27,8 +27,13 @@ if(config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 
+var whiteList = JSON.parse(process.env.CORS_ORIGIN_WHITELIST);
+
 app.use(cors({
-  origin: 'http://alsl-sandbox1.michael-shogren.com',
+  origin: function(origin, callback){
+    var originIsWhitelisted = whiteList.indexOf(origin) !== -1;
+    callback(null, originIsWhitelisted);
+  },
   credentials: true
 }));
 
