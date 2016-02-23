@@ -15,6 +15,9 @@ angular.module('dashboardApp', [
 
     $locationProvider.html5Mode(true);
   })
+  .config(function(STORMPATH_CONFIG) {
+    STORMPATH_CONFIG.ENDPOINT_PREFIX = 'http://alsl-sandbox1.azurewebsites.net';
+  })
   .run(function($stormpath){
     $stormpath.uiRouter({
       loginState: 'login',

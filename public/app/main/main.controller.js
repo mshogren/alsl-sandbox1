@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('dashboardApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, STORMPATH_CONFIG) {
     $scope.awesomeThings = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
+    $http.get(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     });
 
@@ -12,11 +12,11 @@ angular.module('dashboardApp')
       if($scope.newThing === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
+      $http.post(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things', { name: $scope.newThing });
       $scope.newThing = '';
     };
 
     $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+      $http.delete(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things/' + thing._id);
     };
   });
