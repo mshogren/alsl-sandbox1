@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('dashboardApp', [
+  'config',
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -15,8 +16,8 @@ angular.module('dashboardApp', [
 
     $locationProvider.html5Mode(true);
   })
-  .config(function(STORMPATH_CONFIG) {
-    STORMPATH_CONFIG.ENDPOINT_PREFIX = 'http://alsl-sandbox1.azurewebsites.net';
+  .config(function(STORMPATH_CONFIG, ENV) {
+    STORMPATH_CONFIG.ENDPOINT_PREFIX = ENV.apiEndpoint;
   })
   .run(function($stormpath){
     $stormpath.uiRouter({
