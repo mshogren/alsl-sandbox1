@@ -8,7 +8,7 @@ angular.module('dashboardApp')
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl',
         sp: {
-          authenticate: true,
+          //authenticate: true,
           waitForUser: true
         }
       });
