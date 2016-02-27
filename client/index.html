@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -25,6 +26,7 @@
       <link rel="stylesheet" href="app/profile/profile.css">
       <link rel="stylesheet" href="app/register/register.css">
       <link rel="stylesheet" href="app/reset/reset.css">
+      <link rel="stylesheet" href="app/thing/thing.css">
       <link rel="stylesheet" href="app/verify/verify.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
@@ -68,9 +70,9 @@
       <!-- endbower -->
     <!-- endbuild -->
 
-        
+
         <!-- build:js({.tmp,client}) app/app.js -->
-        
+
         <script src="app/app.js"></script>
           <!-- injector:js -->
           <script src="app/config.js"></script>
@@ -86,6 +88,8 @@
           <script src="app/register/register.js"></script>
           <script src="app/reset/reset.controller.js"></script>
           <script src="app/reset/reset.js"></script>
+          <script src="app/thing/thing.controller.js"></script>
+          <script src="app/thing/thing.js"></script>
           <script src="app/verify/verify.controller.js"></script>
           <script src="app/verify/verify.js"></script>
           <script src="components/modal/modal.service.js"></script>

@@ -11,5 +11,9 @@ angular.module('dashboardApp')
           //authenticate: true,
           waitForUser: true
         }
+      })
+      .state('main.thing', {
+        templateUrl: 'app/thing/thing.html',
+        controller: 'ThingCtrl'
       });
   });

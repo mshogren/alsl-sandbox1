@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dashboardApp')
-  .controller('MainCtrl', function ($scope, $http, STORMPATH_CONFIG) {
+  .controller('MainCtrl', function ($state, $scope, $http, STORMPATH_CONFIG) {
     $scope.awesomeThings = [];
 
     $http.get(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things').success(function(awesomeThings) {
@@ -19,4 +19,6 @@ angular.module('dashboardApp')
     $scope.deleteThing = function(thing) {
       $http.delete(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things/' + thing._id);
     };
+
+    $state.transitionTo('main.thing');
   });
