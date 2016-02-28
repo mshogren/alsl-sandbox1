@@ -1,3 +1,6 @@
+// From https://gist.github.com/geraldofcneto/7d4690dc8c81b0f1fde0
+// after following https://github.com/angular-ui/ui-router/issues/212
+
 'use strict';
 
 angular.module('stateMock',[]);
