@@ -4,27 +4,20 @@ describe('Controller: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('dashboardApp'));
+  beforeEach(module('stateMock'));
 
-  var MainCtrl,
-      scope,
-      $httpBackend;
+  it('should transition to the main.thing state', function () {
+    inject(function ($controller, $state, $rootScope) {
+      var scope = $rootScope.$new();
+      var state = $state;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope, STORMPATH_CONFIG) {
-    $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/me').respond({});
-    $httpBackend.expectGET(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
-    $httpBackend.expectGET('app/main/main.html').respond(200, {});
+      state.expectTransitionTo('main.thing');
 
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      var MainCtrl = $controller('MainCtrl', {
+        $scope: scope
+      });
+
+      state.ensureAllTransitionsHappened();
     });
-  }));
-
-  it('should attach a list of things to the scope', function () {
-    $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
   });
 });

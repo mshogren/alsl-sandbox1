@@ -5,7 +5,6 @@ angular.module('dashboardApp')
     $scope.awesomeThings = [];
 
     $http.get(STORMPATH_CONFIG.ENDPOINT_PREFIX + '/api/things').success(function(awesomeThings) {
-      awesomeThings.pop();
       $scope.awesomeThings = awesomeThings;
     });
 
