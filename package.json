@@ -85,7 +85,7 @@
     "start": "node server/app.js",
     "test": "grunt test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "xvfb": "Xvfb :0 -screen 0 1024x768x24 & export:DISPLAY=:0.0"
+    "xvfb": "Xvfb :0 -screen 0 1024x768x24 & export DISPLAY=:0.0"
   },
   "private": true
 }
