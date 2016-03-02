@@ -1,22 +1,14 @@
 'use strict';
 
 angular.module('dashboardApp')
-  .controller('ThingCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .factory('Things', function($resource) {
+    return $resource('/api/things/:id'); // Note the full endpoint address
+  })
+  .controller('ThingCtrl', function ($scope, Things) {
+    $scope.awesomeThings = Things.query();
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.cancel = function() {
+      console.log('Here');
+      $scope.$dismiss();
     };
   });

@@ -4,20 +4,18 @@ describe('Controller: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('dashboardApp'));
-  beforeEach(module('stateMock'));
 
-  it('should transition to the main.thing state', function () {
-    inject(function ($controller, $state, $rootScope) {
-      var scope = $rootScope.$new();
-      var state = $state;
+  var MainCtrl, scope;
 
-      state.expectTransitionTo('main.thing');
-
-      var MainCtrl = $controller('MainCtrl', {
-        $scope: scope
-      });
-
-      state.ensureAllTransitionsHappened();
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    MainCtrl = $controller('LoginCtrl', {
+      $scope: scope
     });
+  }));
+
+  it('should ...', function () {
+    expect(1).toEqual(1);
   });
 });

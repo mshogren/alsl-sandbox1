@@ -5,15 +5,17 @@ angular.module('dashboardApp')
     $stateProvider
       .state('main', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl',
+        views: {
+          '@': {
+            templateUrl: 'app/main/main.html'
+          },
+          'things@main': {
+            templateUrl: 'app/thing/thing.html',
+            controller: 'ThingCtrl'
+          }
+        },
         sp: {
-          //authenticate: true,
           waitForUser: true
         }
-      })
-      .state('main.thing', {
-        templateUrl: 'app/thing/thing.html',
-        controller: 'ThingCtrl'
       });
   });
