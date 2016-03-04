@@ -14,7 +14,7 @@ angular.module('dashboardApp')
         controller: 'ThingCtrl',
         views: {
           'modal@': {
-            templateUrl: 'app/thing/thing.html'
+            templateUrl: 'app/thing/thing-form.html'
           }
         },
         sp: {
