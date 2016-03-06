@@ -2,19 +2,19 @@
 
 angular.module('dashboardApp')
   .config(function ($stateProvider, modalStateProvider) {
-    $stateProvider
-      .state('thing', {
-        url: '/thing',
-        templateUrl: 'app/thing/thing.html',
-        controller: 'ThingCtrl'
-      });
     modalStateProvider
-      .state('main.newThing', {
+      .state('main.thing', {
+        url: '/thing/:id',
         templateUrl: 'components/modalState/modal.html',
         controller: 'ThingCtrl',
         views: {
           'modal@': {
             templateUrl: 'app/thing/thing-form.html'
+          }
+        },
+        resolve: {
+          initialThing: function($state, Things) {
+            return ($state.params && $state.params.id) ? Things.get({id: $state.params.id}) : new Things();
           }
         },
         sp: {
