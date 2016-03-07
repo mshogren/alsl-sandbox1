@@ -1,0 +1,9 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{ modal.title }}</h3>
+</div>
+<div class="modal-body">
+  <div ui-view="modal"></div>
+</div>
+<div class="modal-footer">
+  <button ng-repeat="button in modal.buttons" type="button" class="btn" ng-class="button.class" ng-click="button.click()">{{ button.text }}</button>
+</div>
