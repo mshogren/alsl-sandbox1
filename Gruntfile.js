@@ -75,8 +75,9 @@ module.exports = function (grunt) {
       },
       jsTest: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.spec.js',
-          '<%= yeoman.client %>/{app,components}/**/*.mock.js'
+          '<%= yeoman.client %>/{app,components}/**/*.js'
+          //<'%= yeoman.client %>/{app,components}/**/*.spec.js',
+          //'<%= yeoman.client %>/{app,components}/**/*.mock.js'
         ],
         tasks: ['newer:jshint:all', 'karma']
       },
@@ -146,6 +147,9 @@ module.exports = function (grunt) {
 
     // Empties folders to start fresh
     clean: {
+      options: {
+        force: true
+      },
       dist: {
         files: [{
           dot: true,
@@ -578,7 +582,7 @@ module.exports = function (grunt) {
       'autoprefixer',
       'express:dev',
       'wait',
-      'open',
+      //'open',
       'watch'
     ]);
   });
