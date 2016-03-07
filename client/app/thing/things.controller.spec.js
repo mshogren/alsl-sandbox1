@@ -14,12 +14,11 @@ describe('Controller: ThingsCtrl', function () {
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/me').respond({});
-    $httpBackend.expectGET('/api/things')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
     ThingsCtrl = $controller('ThingsCtrl', {
-      $scope: scope
+      $scope: scope,
+      awesomeThings: ['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']
     });
   }));
 

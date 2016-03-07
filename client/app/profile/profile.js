@@ -6,9 +6,8 @@ angular.module('dashboardApp')
       .state('profile', {
         url: '/profile',
         templateUrl: 'app/profile/profile.html',
-        controller: 'ProfileCtrl',
-	sp: {
+        sp: {
           authenticate: true
-	}
+        }
       });
   });

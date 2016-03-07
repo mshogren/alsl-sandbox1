@@ -5,7 +5,6 @@ angular.module('dashboardApp')
     $stateProvider
       .state('reset', {
         url: '/reset?sptoken',
-        templateUrl: 'app/reset/reset.html',
-        controller: 'ResetCtrl'
+        templateUrl: 'app/reset/reset.html'
       });
   });

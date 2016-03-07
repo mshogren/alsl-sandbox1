@@ -5,7 +5,6 @@ angular.module('dashboardApp')
     $stateProvider
       .state('verify', {
         url: '/verify?sptoken',
-        templateUrl: 'app/verify/verify.html',
-        controller: 'VerifyCtrl'
+        templateUrl: 'app/verify/verify.html'
       });
   });
