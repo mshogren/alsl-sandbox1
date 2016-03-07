@@ -19,6 +19,9 @@ angular.module('dashboardApp', [
   .config(function(STORMPATH_CONFIG, ENV) {
     STORMPATH_CONFIG.ENDPOINT_PREFIX = ENV.apiEndpoint;
   })
+ .config(function($httpProvider) {
+    $httpProvider.interceptors.push('apiInterceptor');
+  })
   .run(function($stormpath){
     $stormpath.uiRouter({
       loginState: 'login',

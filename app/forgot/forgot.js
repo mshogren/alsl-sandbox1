@@ -5,7 +5,6 @@ angular.module('dashboardApp')
     $stateProvider
       .state('forgot', {
         url: '/forgot',
-        templateUrl: 'app/forgot/forgot.html',
-        controller: 'ForgotCtrl'
+        templateUrl: 'app/forgot/forgot.html'
       });
   });
