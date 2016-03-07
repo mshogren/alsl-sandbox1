@@ -1,28 +1,13 @@
 'use strict';
 
 angular.module('dashboardApp')
-  .factory('Things', function($resource) {
-    return $resource('/api/things/:id',
-                     { id: '@_id' },
-                     {
-                       update: {
-                         method: 'PUT'
-                       }
-                     });
-  })
-  .controller('ThingCtrl', function ($scope, $state, Things) {
-    $scope.awesomeThings = Things.query();
-
-    $scope.thing = new Things();
+  .controller('ThingCtrl', function ($scope, $state, thing) {
+    $scope.thing = thing;
 
     $scope.save = function() {
       $scope.thing.$save(function() {
         $state.go('main', {}, {reload: true});
       });
-    };
-
-    $scope.edit = function(thing) {
-      $state.go('main.thing', { id: thing._id });
     };
 
     $scope.delete = function(thing) {
@@ -53,7 +38,7 @@ angular.module('dashboardApp')
     };
 
     if($state.params && $state.params.id) {
-      $scope.thing = Things.get({id: $state.params.id});
+      $scope.modal.title = thing.name;
 
       $scope.save = function() {
         $scope.thing.$update(function() {

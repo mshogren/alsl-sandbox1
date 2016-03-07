@@ -11,7 +11,12 @@ angular.module('dashboardApp')
           },
           'things@main': {
             templateUrl: 'app/thing/thing.html',
-            controller: 'ThingCtrl'
+            controller: 'ThingsCtrl'
+          }
+        },
+        resolve: {
+          awesomeThings: function(Thing) {
+            return Thing.query().$promise;
           }
         },
         sp: {

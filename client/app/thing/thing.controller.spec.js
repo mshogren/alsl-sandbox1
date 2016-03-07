@@ -1,12 +1,12 @@
 'use strict';
 
-describe('Controller: ThingCtrl', function () {
+describe('Controller: ThingsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('dashboardApp'));
   beforeEach(module('stateMock'));
 
-  var ThingCtrl,
+  var ThingsCtrl,
       scope,
       $httpBackend;
 
@@ -18,7 +18,7 @@ describe('Controller: ThingCtrl', function () {
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
-    ThingCtrl = $controller('ThingCtrl', {
+    ThingsCtrl = $controller('ThingsCtrl', {
       $scope: scope
     });
   }));

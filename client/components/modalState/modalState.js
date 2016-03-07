@@ -16,7 +16,8 @@ angular.module('dashboardApp')
         sp: options.sp,
         views: options.views,
 
-        onEnter: function($uibModal, $state) {
+        onEnter: function($uibModal, $state, $stateParams) {
+          $state.params = $stateParams;
           modalInstance = $uibModal.open(options);
           modalInstance.result['finally'](function() {
             modalInstance = null;
