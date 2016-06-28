@@ -2,6 +2,6 @@
 
  angular.module('config', [])
 
-.constant('ENV', {name:'production',apiEndpoint:'http://alsl-sandbox1.azurewebsites.net'})
+.constant('ENV', {name:'production',apiEndpoint:'https://alsl-sandbox1.azurewebsites.net'})
 
 ;
