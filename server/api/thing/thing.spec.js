@@ -24,7 +24,7 @@ describe('GET /api/things', function() {
   it('should respond with JSON array', function(done) {
     var req = request.get('/api/things');
 
-    agent.attachCookies(req);
+    agent._attachCookies(req);
 
     req
       .expect(200)
