@@ -20,7 +20,7 @@ exports.login = function (request, done) {
       if (err) {
         throw err;
       }
-      agent.saveCookies(res);
+      agent._saveCookies(res);
       done(agent);
     });
 };
