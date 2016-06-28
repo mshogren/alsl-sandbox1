@@ -531,7 +531,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://alsl-sandbox1.azurewebsites.net'
+            apiEndpoint: 'https://alsl-sandbox1.azurewebsites.net'
           }
         }
       }
