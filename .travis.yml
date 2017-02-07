@@ -5,6 +5,8 @@ services:
 - mongodb
 node_js:
 - '6'
+addons:
+  ssh_known_hosts: github.com
 cache:
   directories:
   - node_modules
