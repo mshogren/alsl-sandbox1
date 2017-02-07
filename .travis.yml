@@ -22,8 +22,7 @@ before_script:
   - npm install -g bower grunt-cli
   - bower install
   - npm run update-webdriver
-  - which chromedriver
-  - which google-chrome
+  - "which google-chrome"
 script:
   - grunt test
   - grunt build
