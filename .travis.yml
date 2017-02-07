@@ -1,12 +1,6 @@
 dist: trusty
 sudo: false
 language : node_js
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 services: 
   - mongodb
 node_js:
@@ -26,4 +20,5 @@ before_script:
   - node node_modules/protractor/bin/webdriver-manager start &
 script:
   - grunt test
+  - grunt test:e2e
   - grunt build
