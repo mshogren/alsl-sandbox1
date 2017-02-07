@@ -50,6 +50,6 @@ exports.config = {
   }
 };
 
-if (process.env.SNAP_CI) {
+if (process.env.TRAVIS) {
   exports.config.chromeDriver = '/usr/local/bin/chromedriver';
 }
