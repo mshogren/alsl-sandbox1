@@ -388,14 +388,14 @@ module.exports = function (grunt) {
       },
       deploy: {
         options: {
-          remote: process.env.SNAP_CI ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
+          remote: process.env.TRAVIS ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
           branch: 'deploy'
         }
       },
       pages: {
         options: {
 	  dir: 'dist/public',
-	  remote: process.env.SNAP_CI ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
+	  remote: process.env.TRAVIS ? 'git@github.com:mshogren/alsl-sandbox1.git' : 'https://github.com/mshogren/alsl-sandbox1.git',
 	  branch: 'gh-pages'
 	}
       }
