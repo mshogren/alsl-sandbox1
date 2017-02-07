@@ -6,5 +6,8 @@ node_js:
 before_script:
   - npm install -g bower grunt-cli
   - bower install
+  - npm run update-webdriver
 script:
   - grunt test
+  - grunt test:e2e
+  - grunt build
