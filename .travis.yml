@@ -13,7 +13,8 @@ before_script:
   - npm install -g bower grunt-cli
   - bower install
   - npm run update-webdriver
-  - npm run xvfb
+  - "export DISPLAY=:99.0"
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x16"
 script:
   - grunt test
   - grunt test:e2e
