@@ -22,8 +22,7 @@ before_script:
   - npm install -g bower grunt-cli
   - bower install
   - npm run update-webdriver
-  - chromedriver --help
-  - "which chromedriver"
+  - ./nodemodules/protractor/bin/webdriver-manager status
 script:
   - grunt test
   - grunt build
