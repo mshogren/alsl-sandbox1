@@ -5,10 +5,15 @@ services:
   - mongodb
 node_js:
   - "6"
+cache:
+  directories:
+    - node_modules
+    - bower_components
 before_script:
   - npm install -g bower grunt-cli
   - bower install
   - npm run update-webdriver
+  - npm run xvfb
 script:
   - grunt test
   - grunt test:e2e
