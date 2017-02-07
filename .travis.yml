@@ -24,6 +24,4 @@ before_script:
   - npm run update-webdriver
 script:
   - grunt test
-  - grunt test:e2e
   - grunt build
-  - cat chromedriver.log
