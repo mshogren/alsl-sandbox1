@@ -20,3 +20,10 @@ script:
   - grunt test
   - grunt test:e2e
   - grunt build
+deploy:
+  on:
+    branch: master
+  provider: script
+  script:
+    - grunt buildcontrol:deploy
+    - grunt buildcontrol:pages
