@@ -1,6 +1,8 @@
 dist: trusty
 sudo: false
 language : node_js
+services: 
+  - mongodb
 node_js:
   - "6"
 before_script:
